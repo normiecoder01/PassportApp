@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application Sign Up</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff6600;
+            --background-color: #f2f2f2;
+            --text-color: #333;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+        .card-custom {
+            background-color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom text-center">
+                        <h1>Sign Up</h1>
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-custom mb-3"><img src="" alt=""> Additional Info</button>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Check appointment availability</a></li>
+                            <li><a href="#">Apply Anywhere In India</a></li>
+                        </ul>
+
+                        <form>
+                            <div class="form-group">
+                                <label>Register to apply at</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="apply-at" id="cpv-office">
+                                    <label class="form-check-label" for="cpv-office">CPV Office</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="apply-at" id="passport-office">
+                                    <label class="form-check-label" for="passport-office">Passport Office</label>
+                                </div>
+                            </div>
+                            <p>Select the 'CPV Delhi' option to apply for Diplomatic/Official passport at Consular, Passport and Visa (CPV) division, Delhi.</p>
+                            <div class="form-group">
+                                <label for="pp-office-dropdown">Passport Office</label>
+                                <select class="form-control" name="pp-office-dropdown" id="pp-office-dropdown">
+                                    <option value="0" disabled selected>--Select--</option>
+                                </select>
+                            </div>
+                            <p>Tibetan Refugees applying for Identity Certificate must register with 'Delhi' Passport Office.</p>
+                            <div class="form-group">
+                                <label for="given-name">Given Name (Max 45 Characters)*</label>
+                                <input type="text" class="form-control" name="given-name" id="given-name">
+                                <small class="form-text text-muted">First Name + Middle Name. Initials and honorifics (e.g. Dr.,Col.,etc.) are not allowed.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="surname">Surname (Max 45 Characters)</label>
+                                <input type="text" class="form-control" name="surname" id="surname">
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">Date of Birth (DD/MM/YYYY)*</label>
+                                <input type="date" class="form-control" name="dob" id="dob">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail Id (Max 35 Characters)*</label>
+                                <input type="email" class="form-control" name="email" id="email">
+                            </div>
+                            <p>Do you want your Login Id to be same as E-mail Id?</p>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="login-equals-email" id="yes">
+                                <label class="form-check-label" for="yes">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="login-equals-email" id="no">
+                                <label class="form-check-label" for "no">No</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-id">Login Id*</label>
+                                <input type="text" class="form-control" id="login-id" name="login-id">
+                                <a href="#">Check Availability</a>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password*</label>
+                                <input type="password" class="form-control" name="password" id="password">
+                                <a href="#">Password Policy</a>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm Password*</label>
+                                <input type="password" class="form-control" name="confirm-password" id="confirm-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="hint-que">Hint Question*</label>
+                                <select class="form-control" name="hint-que" id="hint-que">
+                                    <option value="0" disabled selected>--Select--</option>
+                                    <option value="birth-city">Birth City</option>
+                                    <option value="fav-color">Favourite Colour</option>
+                                    <option value="fav-cricketer">Favourite Cricketer</option>
+                                    <option value="fav-food">Favourite Food</option>
+                                    <option value="first-school">First School</option>
+                                    <option value="make-first-car">Make of First car Owned</option>
+                                    <option value="mother-maiden-name">Mother's Maiden Name</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hint-answer">Hint Answer*</label>
+                                <input type="text" class="form-control" name="hint-answer" id="hint-answer">
+                            </div>
+                            <div class="form-group">
+                                <label for="capcha-answer">Enter Characters Displayed*</label>
+                                <input type="text" class="form-control" name="capcha-answer" id="capcha-answer">
+                            </div>
+                            <button type="submit" class="btn btn-custom btn-block">Submit</button>
+                            <button type="reset" class="btn btn-secondary btn-block">Clear</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

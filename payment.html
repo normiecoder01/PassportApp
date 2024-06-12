@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application Payment</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff6600;
+            --background-color: #f2f2f2;
+            --text-color: #333;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+        .card-custom {
+            background-color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom text-center">
+                        <h1>Passport Application Payment</h1>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-primary">1. Payment Details</h4>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" value="John Doe" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicationNumber">Application Number:</label>
+                            <input type="text" class="form-control" id="applicationNumber" value="ABC123456789" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="paymentAmount">Payment Amount:</label>
+                            <input type="text" class="form-control" id="paymentAmount" value="₹1,500" readonly>
+                        </div>
+
+                        <h4 class="text-primary">2. Payment Method</h4>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="paymentMethodUPI" name="paymentMethod" value="upi" required>
+                                <label class="form-check-label" for="paymentMethodUPI">UPI</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="paymentMethodGPay" name="paymentMethod" value="gpay" required>
+                                <label class="form-check-label" for="paymentMethodGPay">Google Pay</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="paymentMethodPhonePe" name="paymentMethod" value="phonepe" required>
+                                <label class="form-check-label" for="paymentMethodPhonePe">PhonePe</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="paymentMethodDebitCard" name="paymentMethod" value="debitcard" required>
+                                <label class="form-check-label" for="paymentMethodDebitCard">Debit Card</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" id="paymentMethodCreditCard" name="paymentMethod" value="creditcard" required>
+                                <label class="form-check-label" for="paymentMethodCreditCard">Credit Card</label>
+                            </div>
+                        </div>
+
+                        <div id="upiPaymentSection" class="form-group" style="display: none;">
+                            <label for="upiId">UPI ID:</label>
+                            <input type="text" class="form-control" id="upiId" placeholder="Enter your UPI ID" pattern="[a-zA-Z0-9.@_]{3,}">
+                        </div>
+
+                        <div id="cardPaymentSection" class="form-group" style="display: none;">
+                            <label for="cardNumber">Card Number:</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Enter your card number" pattern="[0-9]{16}" maxlength="16">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="expiryDate">Expiry Date:</label>
+                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" pattern="[0-9]{2}/[0-9]{2}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="cvv">CVV:</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" pattern="[0-9]{3}" maxlength="3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-custom">Proceed to Pay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const paymentMethodRadios = document.querySelectorAll('input[name="paymentMethod"]');
+        const upiPaymentSection = document.getElementById('upiPaymentSection');
+        const cardPaymentSection = document.getElementById('cardPaymentSection');
+
+        paymentMethodRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'upi') {
+                    upiPaymentSection.style.display = 'block';
+                    cardPaymentSection.style.display = 'none';
+                } else if (radio.value === 'debitcard' || radio.value === 'creditcard') {
+                    upiPaymentSection.style.display = 'none';
+                    cardPaymentSection.style.display = 'block';
+                } else {
+                    upiPaymentSection.style.display = 'none';
+                    cardPaymentSection.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

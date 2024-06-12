@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint/Grievance Registration</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff6600;
+            --background-color: #f2f2f2;
+            --text-color: #333;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+        .card-custom {
+            background-color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom text-center">
+                        <h1>Complaint/Grievance Registration</h1>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <h4 class="text-primary">1. Personal Details</h4>
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactNumber">Contact Number:</label>
+                                <input type="tel" class="form-control" id="contactNumber" placeholder="Enter your contact number" pattern="[+][0-9]{2}[0-9]{10}" required>
+                                <small class="form-text text-muted">Format: +91XXXXXXXXXX</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address:</label>
+                                <textarea class="form-control" id="address" rows="3" placeholder="Enter your address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="pinCode">PIN Code:</label>
+                                <input type="text" class="form-control" id="pinCode" placeholder="Enter your PIN code" pattern="[0-9]{6}" required>
+                            </div>
+
+                            <h4 class="text-primary">2. Complaint/Grievance Details</h4>
+                            <div class="form-group">
+                                <label for="complaintType">Complaint/Grievance Type:</label>
+                                <select class="form-control" id="complaintType" required>
+                                    <option value="" disabled selected>Select Complaint/Grievance Type</option>
+                                    <option value="delay">Delay in processing</option>
+                                    <option value="staff">Rude behavior of staff</option>
+                                    <option value="technical">Technical issues</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="complaintDetails">Complaint/Grievance Details:</label>
+                                <textarea class="form-control" id="complaintDetails" rows="5" placeholder="Provide details of your complaint/grievance" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="attachments">Attachments (if any):</label>
+                                <input type="file" class="form-control-file" id="attachments" multiple>
+                                <small class="form-text text-muted">You can upload multiple files if required.</small>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-custom">Submit Complaint/Grievance</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

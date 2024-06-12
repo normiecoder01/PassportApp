@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport Application History</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004d99;
+            --secondary-color: #ffcc00;
+            --accent-color: #ff6600;
+            --background-color: #f2f2f2;
+            --text-color: #333;
+        }
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+        .btn-custom {
+            background-color: var(--secondary-color);
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+        .card-custom {
+            background-color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+        .card-header-custom {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card card-custom">
+                    <div class="card-header card-header-custom text-center">
+                        <h1>Passport Application History</h1>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="text-primary">1. Personal Details</h4>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" value="John Doe" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth:</label>
+                            <input type="text" class="form-control" id="dob" value="01-01-1990" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <textarea class="form-control" id="address" rows="3" readonly>123 Main Street, City, State - 123456</textarea>
+                        </div>
+
+                        <h4 class="text-primary">2. Application Details</h4>
+                        <div class="form-group">
+                            <label for="applicationNumber">Application Number:</label>
+                            <input type="text" class="form-control" id="applicationNumber" value="ABC123456789" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicationDate">Application Date:</label>
+                            <input type="text" class="form-control" id="applicationDate" value="01-05-2023" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="applicationStatus">Application Status:</label>
+                            <input type="text" class="form-control" id="applicationStatus" value="Under Process" readonly>
+                        </div>
+
+                        <h4 class="text-primary">3. Application Timeline</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <strong>01-05-2023:</strong> Application submitted at Passport Seva Kendra, Mumbai
+                            </li>
+                            <li class="list-group-item">
+                                <strong>05-05-2023:</strong> Application received at Regional Passport Office, Mumbai
+                            </li>
+                            <li class="list-group-item">
+                                <strong>10-05-2023:</strong> Application under verification process
+                            </li>
+                            <li class="list-group-item">
+                                <strong>15-05-2023:</strong> Police Verification Initiated
+                            </li>
+                            <li class="list-group-item">
+                                <strong>20-05-2023:</strong> Police Verification Report Received
+                            </li>
+                            <li class="list-group-item">
+                                <strong>25-05-2023:</strong> Application under final approval process
+                            </li>
+                        </ul>
+
+                        <h4 class="text-primary">4. Additional Information</h4>
+                        <div class="form-group">
+                            <label for="policeStation">Police Station for Verification:</label>
+                            <input type="text" class="form-control" id="policeStation" value="XYZ Police Station" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="pinCode">PIN Code:</label>
+                            <input type="text" class="form-control" id="pinCode" value="123456" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactNumber">Contact Number:</label>
+                            <input type="text" class="form-control" id="contactNumber" value="+91 1234567890" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
